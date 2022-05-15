@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ro.ubbcluj.map.monitangaj.controllers.AngajatiSefController">
+<AnchorPane prefHeight="400.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ro.ubbcluj.map.monitangaj.controllers.SarciniSefController">
     <children>
         <SplitPane dividerPositions="0.750965250965251" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <items>
@@ -21,11 +21,10 @@
                             <items>
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                                     <children>
-                                        <TableView fx:id="angajatiTable" minHeight="-Infinity" minWidth="-Infinity" prefHeight="381.0" prefWidth="663.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                        <TableView fx:id="sarciniTable" minHeight="-Infinity" minWidth="-Infinity" prefHeight="381.0" prefWidth="663.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                             <columns>
-                                                <TableColumn fx:id="angajatiTableNume" prefWidth="250.0" text="Nume" />
-                                                <TableColumn fx:id="angajatiTablePrenume" prefWidth="250.0" text="Prenume" />
-                                                <TableColumn fx:id="angajatiTablePrezenta" prefWidth="100.0" text="Prezenta" />
+                                                <TableColumn fx:id="sarciniTableDescriere" prefWidth="700.0" text="Descriere" />
+                                                <TableColumn fx:id="sarciniTableStatus" prefWidth="100.0" text="Status" />
                                             </columns>
                                         </TableView>
                                     </children>
@@ -36,17 +35,17 @@
                 </AnchorPane>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="171.0" prefWidth="665.0">
                     <children>
-                  <Text layoutX="14.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Angajati">
+                  <Text fx:id="friendsOfText" layoutX="14.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sarcini">
                      <font>
                         <Font size="30.0" />
                      </font>
                   </Text>
-                        <HBox prefHeight="35.0" prefWidth="581.0" spacing="20.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="8.0">
+                        <HBox prefHeight="28.0" prefWidth="686.0" spacing="20.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="53.0">
                             <children>
-                                <Button fx:id="transmiteButton" mnemonicParsing="false" onAction="#transmiteSarcinaDialog" text="Transmite Sarcina" />
-                                <Button fx:id="veziButton" mnemonicParsing="false" onAction="#veziSarciniDialog" text="Vezi Sarcini" />
-                        <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
-                        <Button fx:id="logOutButton" mnemonicParsing="false" onAction="#logout" text="Log Out" />
+                                <Button fx:id="modificaButton" mnemonicParsing="false" onAction="#modificaSarcinaDialog" text="Modifica Sarcina" />
+                        <Button fx:id="revocaButton" mnemonicParsing="false" onAction="#revocaSarcinaDialog" text="Revoca Sarcina" />
+                                <Region prefHeight="18.0" prefWidth="52.0" HBox.hgrow="ALWAYS" />
+                                <Button fx:id="inapoiButton" mnemonicParsing="false" onAction="#inapoi" text="Inapoi" />
                             </children>
                             <padding>
                                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
