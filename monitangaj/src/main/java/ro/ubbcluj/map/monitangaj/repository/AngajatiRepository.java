@@ -110,14 +110,15 @@ public class AngajatiRepository implements Repository<Long, Angajat>{
 
     @Override
     public void update(Angajat entity) {
-        String sql = "update angajati set nume = ?, prenume = ? where id_angajat = ?";
+        String sql = "update angajati set nume = ?, prenume = ?, prezenta = ? where id_angajat = ?";
 
         try(Connection connection = DriverManager.getConnection(url, username, password);
             PreparedStatement statement = connection.prepareStatement(sql)){
 
             statement.setString(1, entity.getNume());
             statement.setString(2, entity.getPrenume());
-            statement.setLong(3, entity.getId());
+            statement.setString(3, entity.getPrezenta());
+            statement.setLong(4, entity.getId());
 
             statement.executeUpdate();
 

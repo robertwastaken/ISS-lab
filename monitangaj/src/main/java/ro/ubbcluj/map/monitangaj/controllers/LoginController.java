@@ -1,6 +1,7 @@
 package ro.ubbcluj.map.monitangaj.controllers;
 
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -9,6 +10,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 import ro.ubbcluj.map.monitangaj.HelloApplication;
 import ro.ubbcluj.map.monitangaj.authentication.PasswordRepository;
 import ro.ubbcluj.map.monitangaj.domain.Angajat;
@@ -61,6 +63,8 @@ public class LoginController {
                 }
                 else{
                     Angajat angajat = angajatiService.findOne(passwordRepository.getId(usernameTextField.getText()));
+                    angajat.setPrezenta("prezent");
+                    angajatiService.updateEntity(angajat);
 
                     Stage window = new Stage();
 
@@ -69,10 +73,17 @@ public class LoginController {
                     SarciniController sarciniController = fxmlLoader.getController();
                     sarciniController.setId(angajat.getId());
                     sarciniController.setSarciniService(sarciniService);
+                    sarciniController.setAngajatiService(angajatiService);
                     window.setTitle(angajat.getNume() + " " + angajat.getPrenume());
                     window.setScene(sarcini);
                     Stage stage = (Stage) loginButton.getScene().getWindow();
                     stage.close();
+                    window.setOnCloseRequest(new EventHandler<WindowEvent>() {
+                        public void handle(WindowEvent we) {
+                            angajat.setPrezenta("absent");
+                            angajatiService.updateEntity(angajat);
+                        }
+                    });
                     window.show();
                 }
             }

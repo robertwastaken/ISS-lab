@@ -43,10 +43,11 @@
                   </Text>
                         <HBox prefHeight="35.0" prefWidth="581.0" spacing="20.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="8.0">
                             <children>
-                                <Button fx:id="transmiteButton" mnemonicParsing="false" onAction="#transmiteSarcinaDialog" text="Transmite Sarcina" />
-                                <Button fx:id="veziButton" mnemonicParsing="false" onAction="#veziSarciniDialog" text="Vezi Sarcini" />
-                        <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
-                        <Button fx:id="logOutButton" mnemonicParsing="false" onAction="#logout" text="Log Out" />
+                                <Button fx:id="transmiteButton" mnemonicParsing="false" onAction="#transmiteSarcinaDialog" prefHeight="25.0" prefWidth="130.0" text="Transmite Sarcina" />
+                                <Button fx:id="veziButton" mnemonicParsing="false" onAction="#veziSarciniDialog" prefHeight="25.0" prefWidth="103.0" text="Vezi Sarcini" />
+                        <Button fx:id="reincarcaButton" mnemonicParsing="false" onAction="#refreshButton" prefHeight="25.0" prefWidth="78.0" text="Reincarca" />
+                        <Region prefHeight="25.0" prefWidth="153.0" HBox.hgrow="ALWAYS" />
+                        <Button fx:id="logOutButton" mnemonicParsing="false" onAction="#logout" prefHeight="25.0" prefWidth="74.0" text="Log Out" />
                             </children>
                             <padding>
                                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />

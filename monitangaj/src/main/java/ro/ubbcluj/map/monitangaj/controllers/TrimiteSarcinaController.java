@@ -33,7 +33,7 @@ public class TrimiteSarcinaController {
         trimiteButton.setText(text);
     }
 
-    public Sarcina getToAdd() {
+    public Sarcina getToAdd()    {
         return toAdd;
     }
 

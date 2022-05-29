@@ -27,6 +27,7 @@ import java.util.ResourceBundle;
 
 public class SarciniController implements Initializable {
     private SarciniService sarciniService;
+    private AngajatiService angajatiService;
     private Long id;
 
     public void setId(Long id) {
@@ -45,10 +46,16 @@ public class SarciniController implements Initializable {
     Button terminaButton;
     @FXML
     Button logOutButton;
+    @FXML
+    Button reincarcaButton;
 
     public void setSarciniService(SarciniService sarciniService){
         this.sarciniService = sarciniService;
         loadSarcini();
+    }
+
+    public void setAngajatiService(AngajatiService angajatiService){
+        this.angajatiService = angajatiService;
     }
 
     private void loadSarcini() {
@@ -113,7 +120,13 @@ public class SarciniController implements Initializable {
 
     public void logout(ActionEvent actionEvent) throws IOException {
         Stage stage = (Stage) logOutButton.getScene().getWindow();
+        Angajat angajat = angajatiService.findOne(id);
+        angajat.setPrezenta("absent");
+        angajatiService.updateEntity(angajat);
         stage.close();
     }
 
+    public void refreshButton(ActionEvent actionEvent) {
+        refresh();
+    }
 }

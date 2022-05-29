@@ -43,6 +43,7 @@
                         <HBox prefHeight="28.0" prefWidth="686.0" spacing="20.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="53.0">
                             <children>
                                 <Button fx:id="terminaButton" mnemonicParsing="false" onAction="#terminaSarcinaDialog" text="Termina Sarcina" />
+                        <Button fx:id="reincarcaButton" mnemonicParsing="false" onAction="#refreshButton" text="Reincarca" />
                                 <Region prefHeight="18.0" prefWidth="52.0" HBox.hgrow="ALWAYS" />
                                 <Button fx:id="logOutButton" mnemonicParsing="false" onAction="#logout" text="Log Out" />
                             </children>

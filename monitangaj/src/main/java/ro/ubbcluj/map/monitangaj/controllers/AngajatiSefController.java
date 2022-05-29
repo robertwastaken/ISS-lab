@@ -49,6 +49,8 @@ public class AngajatiSefController implements Initializable {
     Button veziButton;
     @FXML
     Button logOutButton;
+    @FXML
+    Button reincarcaButton;
 
     public AngajatiSefController() {
     }
@@ -154,5 +156,9 @@ public class AngajatiSefController implements Initializable {
     public void logout(ActionEvent actionEvent) throws IOException {
         Stage stage = (Stage) logOutButton.getScene().getWindow();
         stage.close();
+    }
+
+    public void refreshButton(ActionEvent actionEvent) {
+        refresh();
     }
 }
